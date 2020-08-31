@@ -68,7 +68,7 @@ phases:
           labels:
             app: $_PROJECT_NAME
         spec:
-          replicas: 1
+          replicas: 2
           strategy:
             type: RollingUpdate
             rollingUpdate:
