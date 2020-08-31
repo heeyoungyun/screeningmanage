@@ -86,11 +86,12 @@ phases:
                     image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$_PROJECT_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION
                     ports:
                       - containerPort: 8080
+                    imagePullPolicy: Always
                     readinessProbe:
                       httpGet:
                         path: '/actuator/health'
                         port: 8080
-                      initialDelaySeconds: 20
+                      initialDelaySeconds: 30
                       timeoutSeconds: 2
                       periodSeconds: 5
                       failureThreshold: 10
